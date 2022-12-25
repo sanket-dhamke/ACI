@@ -1,0 +1,32 @@
+JAVA INSTALLATION
+sudo dpkg -i jdk-11.0.16.1_linux-x64_bin.deb 
+sudo nano /etc/profile.d/jdk11.sh
+
+"""
+export JAVA_HOME="/usr/lib/jvm/jdk-11"
+export PATH="$PATH:${JAVA_HOME}/bin"
+"""
+sudo reboot
+java --version
+echo $JAVA_HOME
+
+CERTIFICATE IMPORT
+
+keytool -importcert -file /home/admin/Downloads/cov1cert01vm.cer -keystore $JAVA_HOME/lib/security/cacerts -alias cov1cert01vm -storepass changeit -trustcacerts -noprompt
+
+keytool -importcert -file /home/admin/Downloads/COV1CERT03VM.cer -keystore $JAVA_HOME/lib/security/cacerts -alias COV1CERT03VM -storepass changeit -trustcacerts -noprompt
+
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAaAAAABNlY2RzYS
+1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQS6IYIz5cKJvEBOZ531Ahpwkyof5Bgn
+xM5U0syQeT9yggCnw+HW7tCiLKbCX4Mdh0xev7yxh0f6i8ha0ORC+lXfAAAAqIKbSLCCm0
+iwAAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLohgjPlwom8QE5n
+nfUCGnCTKh/kGCfEzlTSzJB5P3KCAKfD4dbu0KIspsJfgx2HTF6/vLGHR/qLyFrQ5EL6Vd
+8AAAAhAIH/Xp0KF4yQZce5vZdH0rXsHeuyQZj0L7lVd0NBoIgMAAAADmFkbWluQFVidW50
+dTIwAQ==
+
+ECLIPSE
+go to eclipse.ini and -vm/plugins
+org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped.linux.x86_64_17.0.4.v20221004-1257/jre/bin
+
+"/home/admin/Downloads/eclipse-inst-jre-linux64/eclipse-installer/plugins/org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped.linux.x86_64_17.0.4.v20221004-1257/jre/bin/keytool" -importcert -keystore "/home/admin/Downloads/eclipse-inst-jre-linux64/eclipse-installer/plugins/org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped.linux.x86_64_17.0.4.v20221004-1257/jre/lib/security/cacerts" -storepass changeit -file "/home/admin/Downloads/wildcard-am.cer" -alias wildcard-am -trustcacerts -noprompt
+
