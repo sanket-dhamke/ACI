@@ -1,0 +1,17 @@
+JAVA INSTALLATION
+sudo dpkg -i jdk-11.0.16.1_linux-x64_bin.deb 
+sudo nano /etc/profile.d/jdk11.sh
+
+"""
+export JAVA_HOME="/usr/lib/jvm/jdk-11"
+export PATH="$PATH:${JAVA_HOME}/bin"
+"""
+sudo reboot
+java --version
+echo $JAVA_HOME
+
+CERTIFICATE IMPORT
+
+keytool -importcert -file /home/admin/Downloads/cov1cert01vm.cer -keystore $JAVA_HOME/lib/security/cacerts -alias cov1cert01vm -storepass changeit -trustcacerts -noprompt
+
+keytool -importcert -file /home/admin/Downloads/COV1CERT03VM.cer -keystore $JAVA_HOME/lib/security/cacerts -alias COV1CERT03VM -storepass changeit -trustcacerts -noprompt
