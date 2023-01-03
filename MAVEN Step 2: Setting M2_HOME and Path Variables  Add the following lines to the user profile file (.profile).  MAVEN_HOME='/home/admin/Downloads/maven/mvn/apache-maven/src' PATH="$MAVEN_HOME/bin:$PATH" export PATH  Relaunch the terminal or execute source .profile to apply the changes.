@@ -1,0 +1,11 @@
+MAVEN
+Step 2: Setting M2_HOME and Path Variables
+
+Add the following lines to the user profile file (.profile).
+
+MAVEN_HOME='/home/admin/Downloads/maven/mvn/apache-maven/src'
+PATH="$MAVEN_HOME/bin:$PATH"
+export PATH
+
+Relaunch the terminal or execute source .profile to apply the changes.
+
